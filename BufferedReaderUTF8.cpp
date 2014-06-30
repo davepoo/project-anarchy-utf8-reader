@@ -31,9 +31,9 @@ VString cBufferedReaderUTF8::readLine() {
 	VASSERT_MSG( m_pInputStream != NULL, "The input stream cannot be null" );
 	
 	//Get the line    
-  const unsigned int WSTR_SIZE = 40;
-  wchar_t wstr[WSTR_SIZE];          //buffer for our wide characters
-  unsigned int wstr_pos = 0;        //wide character buffer position
+	const unsigned int WSTR_SIZE = 40;
+	wchar_t wstr[WSTR_SIZE];          //buffer for our wide characters
+	unsigned int wstr_pos = 0;        //wide character buffer position
 	VString line = VString("",200);   //our finished line
 	bool eof_eol = false;
 	while ( eof_eol == false ) {		
@@ -47,7 +47,7 @@ VString cBufferedReaderUTF8::readLine() {
 			//append the current wide char
 			//convert to wchar_t*
 			wstr[wstr_pos] = c;
-      wstr_pos++;
+			wstr_pos++;
 		}
         
 		//check for end of file
@@ -55,13 +55,13 @@ VString cBufferedReaderUTF8::readLine() {
 			eof_eol = true;
 		}
         
-    //append wide line buffer and start again if we reached the end of the line
-    //or if we ran out of space in our wide line buffer
-    if ( wstr_pos == WSTR_SIZE-2 || eof_eol == true ) {
-      wstr[wstr_pos] = 0;       //zero terminate the wide string buffer
-      line += wstr;             //append wide string buffer to our VString			
-      wstr_pos = 0;             //start again
-    }
+		//append wide line buffer and start again if we reached the end of the line
+		//or if we ran out of space in our wide line buffer
+		if ( wstr_pos == WSTR_SIZE-2 || eof_eol == true ) {
+			wstr[wstr_pos] = 0;       //zero terminate the wide string buffer
+			ine += wstr;             //append wide string buffer to our VString			
+			wstr_pos = 0;             //start again
+		}
     
 		VASSERT_MSG( line.GetLen() < 10000, "The size of the line read by the UTF8 reader has gone over 10000 characters" )	
 	}
