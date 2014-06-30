@@ -9,7 +9,7 @@ public:
 	~cBufferedReaderUTF8();
 
 	/** Reads a line of text. A line is considered to be terminated by a carriage return (\r) followed immediately by a linefeed (\n). 
-	* @return A String containing the contents of the line, not including any line-termination characters, or NULL if the end of the stream has been reached */
+	* @return A String containing the contents of the line, not including any line-termination characters */
 	VString readLine();
 protected:
 private:
