@@ -6,6 +6,7 @@ The `cBufferedReaderUTF8` class allows line by line reading of a UTF-8 text file
 # Usage
 
 * Create a file in Notepad++
+* Enter a few lines of text
 * Save it as UTF-8 encoded without BOM
 * The following example code shows how read the file inside your game using the `readLine()` method
 
